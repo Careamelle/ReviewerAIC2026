@@ -6,12 +6,14 @@
     <title>Reviewer from Excel</title>
     <style>
         :root {
-            --bg-color: #f7f9fa;
-            --text-color: #2c3e50;
-            --primary: #3498db;
-            --primary-hover: #2980b9;
-            --card-bg: #ffffff;
-            --border: #e1e8ed;
+            /* Palette mapped to the JIECEP Logo */
+            --bg-color: #050505;
+            --card-bg: #121016;
+            --primary: #8a2be2; /* Vibrant violet */
+            --primary-hover: #a14cf0;
+            --text-main: #f8f9fa;
+            --text-muted: #a1a1aa;
+            --border: #2d243e;
         }
 
         body {
@@ -19,170 +21,201 @@
             margin: 0;
             padding: 0;
             background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        header {
-            text-align: center;
-            padding: 4rem 2rem 2rem;
+        /* Top Bar for Logo and Profile Widget */
+        .top-bar {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .brand-logo {
+            height: 60px; /* Adjust height as needed */
+            width: auto;
+            border-radius: 50%; /* Remove this line if your logo is a square/rectangle */
+        }
+
+        .profile-widget {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: rgba(18, 16, 22, 0.8);
+            backdrop-filter: blur(8px);
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            max-width: 420px;
+            text-align: right;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .profile-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-text .name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+        }
+
+        .profile-text .bio {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-top: 4px;
+        }
+
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            flex-shrink: 0;
+        }
+
+        /* Main Hero Section */
+        .hero {
             background-color: var(--card-bg);
-            border-bottom: 1px solid var(--border);
+            padding: 4rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(138, 43, 226, 0.05);
+            border: 1px solid var(--border);
+            max-width: 800px;
+            width: 90%;
+            margin-top: 150px; /* Offset for the absolute top-bar */
+            text-align: center;
         }
 
         h1 {
             font-size: 2.5rem;
             margin: 0 0 0.5rem 0;
             font-weight: 700;
+            background: linear-gradient(90deg, #fff, #d8b4fe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         h2 {
             font-size: 1.1rem;
-            color: #7f8c8d;
+            color: var(--text-muted);
             font-weight: 400;
-            margin: 0 0 1.5rem 0;
+            margin: 0 0 2rem 0;
+            letter-spacing: 1px;
         }
 
         .quote {
             font-style: italic;
-            color: #95a5a6;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 1rem;
+            color: var(--text-muted);
+            margin: 0 auto 3rem auto;
+            padding: 1.2rem;
             border-left: 3px solid var(--primary);
-            background-color: var(--bg-color);
+            background-color: rgba(138, 43, 226, 0.05);
             border-radius: 0 8px 8px 0;
+            max-width: 80%;
+            font-size: 0.95rem;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .tabs {
+        .button-container {
             display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 1.2rem;
+            align-items: center;
         }
 
-        .tab-btn {
-            background-color: var(--card-bg);
+        .nav-btn {
+            display: inline-block;
+            width: 100%;
+            max-width: 320px;
+            background-color: var(--bg-color);
             border: 1px solid var(--border);
-            padding: 1rem 2rem;
-            font-size: 1rem;
+            padding: 1.2rem 2rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            color: var(--text-color);
+            color: var(--text-main);
             border-radius: 8px;
-            cursor: pointer;
+            text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
-        .tab-btn:hover {
+        .nav-btn:hover {
             border-color: var(--primary);
+            background-color: rgba(138, 43, 226, 0.1);
+            color: #d8b4fe;
             transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(138, 43, 226, 0.15);
         }
 
-        .tab-btn.active {
-            background-color: var(--primary);
-            color: white;
-            border-color: var(--primary);
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
-        }
-
-        .content-section {
-            display: none;
-            background-color: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            border: 1px solid var(--border);
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        .content-section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Base formatting for the QA blocks */
-        .qa-block {
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .qa-block:last-child {
-            border-bottom: none;
-        }
-
-        .answer { font-weight: bold; color: #27ae60; margin: 0.5rem 0;}
-        .rationale { color: #555; }
-
-        @media (max-width: 600px) {
-            .tabs { flex-direction: column; }
-            .tab-btn { width: 100%; }
+        @media (max-width: 768px) {
+            .top-bar {
+                position: relative;
+                flex-direction: column;
+                gap: 1.5rem;
+                justify-content: center;
+                padding: 1.5rem 1rem;
+            }
+            .profile-widget {
+                text-align: left;
+                flex-direction: row-reverse;
+            }
+            .hero {
+                margin-top: 1rem;
+                padding: 3rem 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <!-- Header Navigation -->
+    <div class="top-bar">
+        
+        <!-- Top Left: JIECEP Logo -->
+        <div class="logo-container">
+            <img src="JIECEPLOGO.png" alt="JIECEP Logo" class="brand-logo">
+        </div>
+
+        <!-- Top Right: Personal Profile -->
+        <div class="profile-widget">
+            <div class="profile-text">
+                <span class="name">Carmel Angelo N. Hervera</span>
+                <span class="bio">Electronics Engineering Student, Sorsogon State University - College of Engineering and Architecture (Baribag Extension) A.Y. 2026-2027</span>
+            </div>
+            <img src="my-new-model.jpg" alt="Profile" class="profile-img">
+        </div>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="hero">
         <h1>Reviewer from Excel</h1>
         <h2>through AIC subject 2026 this 1st sem</h2>
+        
         <div class="quote">
             "Commit your work to the Lord, and your plans will be established." – Proverbs 16:3
         </div>
-    </header>
 
-    <div class="container">
-        <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('calc')">Differential Calculus</button>
-            <button class="tab-btn" onclick="openTab('circuits')">DC Circuits</button>
-            <button class="tab-btn" onclick="openTab('chem')">Chemistry</button>
-        </div>
-
-        <div id="calc" class="content-section active">
-            <h2>Differential Calculus (Math 10-01 to 10-11)</h2>
-            <!-- Format your content like this example block: -->
-            <div class="qa-block">
-                <div class="question"><strong>1.</strong> Evaluate lim (x→∞) (3x² + 2x + 1) / (x² + x + 1)</div>
-                <div class="answer">Answer: B. 3</div>
-                <div class="rationale">Rationale: Divide all terms by the highest power x². The limit approaches the ratio of the leading coefficients: 3/1 = 3.</div>
-            </div>
-            <!-- Insert remaining Calculus Content Here -->
-        </div>
-
-        <div id="circuits" class="content-section">
-            <h2>DC Circuits (Elec 03-01 to 03-06)</h2>
-            <!-- Insert DC Circuits Content Here -->
-        </div>
-
-        <div id="chem" class="content-section">
-            <h2>Chemistry (GEAS 01-01 to 01-13)</h2>
-             <!-- Insert Chemistry Content Here -->
+        <div class="button-container">
+            <a href="calculus.html" class="nav-btn">Differential Calculus</a>
+            <a href="circuits.html" class="nav-btn">DC Circuits</a>
+            <a href="chemistry.html" class="nav-btn">Chemistry</a>
         </div>
     </div>
 
-    <script>
-        function openTab(tabId) {
-            // Hide all sections
-            document.querySelectorAll('.content-section').forEach(sec => sec.classList.remove('active'));
-            // Remove active class from all buttons
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            
-            // Show selected section
-            document.getElementById(tabId).classList.add('active');
-            // Add active class to clicked button
-            event.currentTarget.classList.add('active');
-        }
-    </script>
 </body>
 </html>
