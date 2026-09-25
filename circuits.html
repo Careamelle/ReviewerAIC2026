@@ -6,7 +6,7 @@
     <title>DC Circuits Reviewer</title>
     <style>
         :root {
-            var(--bg-color): #050505;
+            --bg-color: #050505;
             --card-bg: #121016;
             --primary: #8a2be2;
             --text-main: #f8f9fa;
@@ -19,9 +19,7 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #050505; /* Fallback */
             background-color: var(--bg-color);
-            color: #f8f9fa;
             color: var(--text-main);
             line-height: 1.6;
         }
@@ -33,8 +31,8 @@
             justify-content: space-between;
             align-items: center;
             box-sizing: border-box;
-            background-color: #121016;
-            border-bottom: 1px solid #2d243e;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border);
         }
 
         .brand-logo {
@@ -58,13 +56,13 @@
         .profile-text .name {
             font-weight: 700;
             font-size: 0.95rem;
-            color: #f8f9fa;
+            color: var(--text-main);
             letter-spacing: 0.5px;
         }
 
         .profile-text .bio {
             font-size: 0.7rem;
-            color: #a1a1aa;
+            color: var(--text-muted);
             line-height: 1.4;
             margin-top: 4px;
         }
@@ -74,7 +72,7 @@
             height: 50px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #8a2be2;
+            border: 2px solid var(--primary);
             flex-shrink: 0;
         }
 
@@ -82,17 +80,17 @@
             max-width: 900px;
             margin: 2rem auto 4rem auto;
             padding: 2.5rem;
-            background-color: #121016;
+            background-color: var(--card-bg);
             border-radius: 12px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-            border: 1px solid #2d243e;
+            border: 1px solid var(--border);
         }
 
         .back-btn {
             display: inline-flex;
             align-items: center;
             margin-bottom: 2rem;
-            color: #8a2be2;
+            color: var(--primary);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.2s;
@@ -104,12 +102,12 @@
 
         .back-btn:hover {
             color: #d8b4fe;
-            border-color: #2d243e;
+            border-color: var(--border);
             background-color: rgba(138, 43, 226, 0.1);
         }
 
         h2 {
-            border-bottom: 2px solid #2d243e;
+            border-bottom: 2px solid var(--border);
             padding-bottom: 1.2rem;
             margin-top: 0;
             color: #d8b4fe;
@@ -119,7 +117,7 @@
         .qa-block {
             margin-bottom: 2rem;
             padding-bottom: 1.5rem;
-            border-bottom: 1px solid #2d243e;
+            border-bottom: 1px solid var(--border);
         }
         
         .qa-block:last-child {
@@ -134,7 +132,7 @@
         
         .answer { 
             font-weight: bold; 
-            color: #34d399; 
+            color: var(--success); 
             margin: 0.75rem 0; 
             background: rgba(52, 211, 153, 0.1);
             display: inline-block;
@@ -143,12 +141,12 @@
         }
 
         .rationale { 
-            color: #a1a1aa; 
+            color: var(--text-muted); 
             font-size: 0.95rem; 
             background: rgba(255, 255, 255, 0.02);
             padding: 1rem;
             border-radius: 8px;
-            border-left: 3px solid #2d243e;
+            border-left: 3px solid var(--border);
         }
 
         @media (max-width: 768px) {
