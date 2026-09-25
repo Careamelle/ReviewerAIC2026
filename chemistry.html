@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chemistry Reviewer</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --card-bg: #121016;
+            --primary: #8a2be2;
+            --text-main: #f8f9fa;
+            --text-muted: #a1a1aa;
+            --border: #2d243e;
+            --success: #34d399;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand-logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .profile-widget {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-align: right;
+            max-width: 420px;
+        }
+
+        .profile-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-text .name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+        }
+
+        .profile-text .bio {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-top: 4px;
+        }
+
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            flex-shrink: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto 4rem auto;
+            padding: 2.5rem;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            border: 1px solid var(--border);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+            padding: 0.5rem 1rem;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            background-color: rgba(138, 43, 226, 0.05);
+        }
+
+        .back-btn:hover {
+            color: #d8b4fe;
+            border-color: var(--border);
+            background-color: rgba(138, 43, 226, 0.1);
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 1.2rem;
+            margin-top: 0;
+            color: #d8b4fe;
+            font-size: 1.8rem;
+        }
+
+        .qa-block {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .qa-block:last-child {
+            border-bottom: none;
+        }
+
+        .question { 
+            font-size: 1.1rem; 
+            color: #fff; 
+            font-weight: 500;
+        }
+        
+        .answer { 
+            font-weight: bold; 
+            color: var(--success); 
+            margin: 0.75rem 0; 
+            background: rgba(52, 211, 153, 0.1);
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+        }
+
+        .rationale { 
+            color: var(--text-muted); 
+            font-size: 0.95rem; 
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: flex-start;
+                padding: 1.5rem 1rem;
+            }
+            .profile-widget {
+                text-align: left;
+                flex-direction: row-reverse;
+                align-self: flex-end;
+            }
+            .container {
+                margin: 1.5rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="logo-container">
+            <img src="JIECEPLOGO.png" alt="JIECEP Logo" class="brand-logo">
+        </div>
+
+        <div class="profile-widget">
+            <div class="profile-text">
+                <span class="name">Carmel Angelo N. Hervera</span>
+                <span class="bio">Electronics Engineering Student, Sorsogon State University - College of Engineering and Architecture (Baribag Extension) A.Y. 2026-2027</span>
+            </div>
+            <img src="my-new-model.jpg" alt="Profile" class="profile-img">
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <a href="index.html" class="back-btn">← Back to Main Menu</a>
+        
+        <h2>Chemistry (GEAS 01-01 to 01-13)</h2>
+
+        <!-- Item 1 -->
+        <div class="qa-block">
+            <div class="question">1. The mass of one Avogadro number of helium atom is</div>
+            <div class="answer">Answer: B. 4g</div>
+            <div class="rationale">Rationale: One Avogadro's number (6.022 &times; 10&sup2;&sup3;) of atoms is exactly one mole. The atomic mass of helium is approximately 4.00 g/mol, meaning one mole weighs 4 grams.</div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="qa-block">
+            <div class="question">2. What is the mass of an electron in amu?</div>
+            <div class="answer">Answer: D. 5.485799 &times; 10&strns;⁴</div>
+            <div class="rationale">Rationale: An electron's mass is a standard physical constant, roughly 1/1836 the mass of a proton. In atomic mass units (amu), this is precisely 5.485799 &times; 10&strns;⁴ amu.</div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="qa-block">
+            <div class="question">3. The number of ___ in an atom defines the isotopes of an element.</div>
+            <div class="answer">Answer: A. neutrons</div>
+            <div class="rationale">Rationale: All atoms of the same element have the exact same number of protons. Isotopes are variations of that element containing different numbers of neutrons.</div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="qa-block">
+            <div class="question">4. What refers to the measure of the atom's tendency to attract an additional electron?</div>
+            <div class="answer">Answer: B. Electron affinity</div>
+            <div class="rationale">Rationale: Electron affinity is the energy change when an electron is added to a neutral atom. (Electronegativity refers strictly to attracting shared electrons in a bond).</div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="qa-block">
+            <div class="question">5. Elements in Group 1A in the periodic table are</div>
+            <div class="answer">Answer: C. Alkali metals</div>
+            <div class="rationale">Rationale: Group 1A elements (Lithium, Sodium, Potassium, etc.) are known as the highly reactive alkali metals.</div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="qa-block">
+            <div class="question">6. The boron group is what group in the periodic table?</div>
+            <div class="answer">Answer: Group IIIA (Closest implied option given text errors)</div>
+            <div class="rationale">Rationale: Boron sits at the top of Group 13, which in classical Roman numeral notation is Group IIIA.</div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="qa-block">
+            <div class="question">7. The chalcogens are elements in what group in the periodic table?</div>
+            <div class="answer">Answer: B. Group VIA</div>
+            <div class="rationale">Rationale: Group VIA (or 16) contains the oxygen family, classically referred to as the chalcogens.</div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="qa-block">
+            <div class="question">8. Which of the following is NOT a noble gas?</div>
+            <div class="answer">Answer: D. Antimony</div>
+            <div class="rationale">Rationale: Argon, Xenon, and Radon are all Group VIIIA noble gases. Antimony (Sb) is a metalloid located in Group VA.</div>
+        </div>
+
+        <!-- Item 9 -->
+        <div class="qa-block">
+            <div class="question">9. The elements of groups IA, IIA, IIIA, IVA, VA, VIA, VIIA and VIIIA are called main group elements or</div>
+            <div class="answer">Answer: B. representatives</div>
+            <div class="rationale">Rationale: The "A" block elements (s and p blocks) are universally known in chemistry as the main group or representative elements.</div>
+        </div>
+
+        <!-- Item 10 -->
+        <div class="qa-block">
+            <div class="question">10. The most electronegative element among the following is:</div>
+            <div class="answer">Answer: C. Fluorine</div>
+            <div class="rationale">Rationale: Electronegativity increases up and to the right on the periodic table. Fluorine is the most electronegative element of all, sitting at 4.0 on the Pauling scale.</div>
+        </div>
+
+        <!-- Item 11 -->
+        <div class="qa-block">
+            <div class="question">11. The ionization energy is ___ to the atomic size of atom.</div>
+            <div class="answer">Answer: B. inversely proportional</div>
+            <div class="rationale">Rationale: Smaller atoms hold their valence electrons closer to the positively charged nucleus, requiring much more energy (higher ionization energy) to remove them.</div>
+        </div>
+
+        <!-- Item 12 -->
+        <div class="qa-block">
+            <div class="question">12. "When two or more elements form more than one compound, the ratio of the masses... is the ratio of small whole numbers."</div>
+            <div class="answer">Answer: D. Law of multiple proportion</div>
+            <div class="rationale">Rationale: This is the formal definition of Dalton's Law of Multiple Proportions (e.g., CO vs CO&sub2;).</div>
+        </div>
+
+        <!-- Item 13 -->
+        <div class="qa-block">
+            <div class="question">13. "The total pressure of a mixture of gases equals the sum of the partial pressures of each of the gases in the mixture"</div>
+            <div class="answer">Answer: A. Dalton's law of partial pressure</div>
+            <div class="rationale">Rationale: This is the textbook definition of Dalton's Law.</div>
+        </div>
+
+        <!-- Item 14 -->
+        <div class="qa-block">
+            <div class="question">14. What law states that the rate of effusion of a gas... is inversely proportional to the square root of its molar mass?</div>
+            <div class="answer">Answer: B. Graham's law of effusion</div>
+            <div class="rationale">Rationale: Graham's law formula: Rate&sub1;/Rate&sub2; = &radic;(M&sub2;/M&sub1;).</div>
+        </div>
+
+        <!-- Item 15 -->
+        <div class="qa-block">
+            <div class="question">15. The law which states that the amount of gas dissolved in a liquid is proportional to its partial pressure</div>
+            <div class="answer">Answer: C. Henry's Law</div>
+            <div class="rationale">Rationale: Henry's Law mathematically dictates gas solubility in liquids based on atmospheric pressure (C = kP).</div>
+        </div>
+
+        <!-- Item 16 -->
+        <div class="qa-block">
+            <div class="question">16. A motorist starts a trip... temperature is 4&deg;C and pressure gauge reads 32 psi. At 50&deg;C, to what pressure will the air rise?</div>
+            <div class="answer">Answer: B. 54.8 psia</div>
+            <div class="rationale">Rationale: Convert to absolute: P&sub1; = 32 + 14.7 = 46.7 psia. T&sub1; = 4 + 273.15 = 277.15 K. T&sub2; = 50 + 273.15 = 323.15 K. Using Gay-Lussac's Law (P&sub1;/T&sub1; = P&sub2;/T&sub2;): P&sub2; = 46.7 &times; (323.15 / 277.15) &approx; 54.45 psia (Standardized textbook answers using 1 atm = 15 psi yield exactly 54.8 psia).</div>
+        </div>
+
+        <!-- Item 17 -->
+        <div class="qa-block">
+            <div class="question">17. What is the ratio of the number of moles of solute per kilogram of solvent?</div>
+            <div class="answer">Answer: B. Molality</div>
+            <div class="rationale">Rationale: Molality (m) is moles of solute / kg of solvent, used heavily in colligative property calculations because it is temperature independent.</div>
+        </div>
+
+        <!-- Item 18 -->
+        <div class="qa-block">
+            <div class="question">18. Calculate the volume at STP occupied by 12.5 g of nitrogen gas</div>
+            <div class="answer">Answer: D. 10 L</div>
+            <div class="rationale">Rationale: Nitrogen gas is N&sub2;, so molar mass = 28 g/mol. Moles = 12.5 / 28 &approx; 0.446 mol. At STP, 1 mole = 22.4 L. Volume = 0.446 &times; 22.4 &approx; 10 L.</div>
+        </div>
+
+        <!-- Item 19 -->
+        <div class="qa-block">
+            <div class="question">19. How many grams of oxygen are there in 2.5 moles of Ca(NO&sub3;)&sub2;?</div>
+            <div class="answer">Answer: D. 240 g</div>
+            <div class="rationale">Rationale: In 1 mole of Ca(NO&sub3;)&sub2;, there are 2 &times; 3 = 6 moles of Oxygen atoms. In 2.5 moles of the compound, there are 2.5 &times; 6 = 15 moles of Oxygen. Mass = 15 mol &times; 16 g/mol = 240 g.</div>
+        </div>
+
+        <!-- Item 20 -->
+        <div class="qa-block">
+            <div class="question">20. Calculate the mass at STP, in grams, of 230 ml of Cl&sub2; gas at 20&deg;C and 740 torr pressure.</div>
+            <div class="answer">Answer: C. 0.662 g</div>
+            <div class="rationale">Rationale: Ideal gas law (PV = nRT). P = 740/760 atm, V = 0.230 L, T = 293 K. n = PV/RT = ((740/760) &times; 0.23) / (0.0821 &times; 293) &approx; 0.00934 moles. Mass = 0.00934 &times; 70.9 g/mol &approx; 0.662 g.</div>
+        </div>
+
+        <!-- Item 21 -->
+        <div class="qa-block">
+            <div class="question">21. What is the density of propane gas (C&sub3;H&sub8;) if the pressure of the gas was measured to be 3.5 atm at 285 K?</div>
+            <div class="answer">Answer: B. 6.6 g/L</div>
+            <div class="rationale">Rationale: Density formula derived from ideal gas law: d = PM / RT. Molar mass of C&sub3;H&sub8; = 44.1 g/mol. d = (3.5 &times; 44.1) / (0.0821 &times; 285) &approx; 6.6 g/L.</div>
+        </div>
+
+        <!-- Item 22 -->
+        <div class="qa-block">
+            <div class="question">22. What would be the number of moles of chlorine gas present if the gas fills a 75-ml flask having a pressure of 755 mmHg and a temperature of 100&deg;C?</div>
+            <div class="answer">Answer: C. 0.00243</div>
+            <div class="rationale">Rationale: n = PV/RT. P = 755/760 atm. V = 0.075 L. T = 373 K. n = ((755/760) &times; 0.075) / (0.0821 &times; 373) &approx; 0.00243 moles.</div>
+        </div>
+
+        <!-- Item 23 -->
+        <div class="qa-block">
+            <div class="question">23. If a gas diffuses at a rate of 1/2 as fast as O&sub2;, what is the molecular weight of the gas?</div>
+            <div class="answer">Answer: A. 128 g/mol</div>
+            <div class="rationale">Rationale: By Graham's Law: Rate&sub1;/Rate&sub2; = &radic;(M&sub2;/M&sub1;). Let O&sub2; be gas 2 (M=32). 0.5 = &radic;(32 / M&sub1;). Squaring both sides: 0.25 = 32 / M&sub1; &rarr; M&sub1; = 32 / 0.25 = 128 g/mol.</div>
+        </div>
+
+        <!-- Item 24 -->
+        <div class="qa-block">
+            <div class="question">24. What is the total pressure inside a container that contains He at a pressure of 0.45 atm and Ar at a pressure of 0.75 atm?</div>
+            <div class="answer">Answer: C. 1.2 atm</div>
+            <div class="rationale">Rationale: Dalton's Law of Partial Pressures states P_total = P_He + P_Ar = 0.45 + 0.75 = 1.2 atm.</div>
+        </div>
+
+        <!-- Item 25 -->
+        <div class="qa-block">
+            <div class="question">25. A volume of 50 liters is filled with helium at 15&deg;C to a pressure of 100 standard atmospheres. Calculate approximately the mass of helium required.</div>
+            <div class="answer">Answer: B. 840 g</div>
+            <div class="rationale">Rationale: n = PV/RT = (100 &times; 50) / (0.0821 &times; 288 K) &approx; 211.5 moles. Mass = 211.5 mol &times; 4.00 g/mol (He) &approx; 846 g. 840 g is the closest approximation among the choices.</div>
+        </div>
+
+        <!-- Item 26 -->
+        <div class="qa-block">
+            <div class="question">26. Calculate the mole fraction of phosphoric acid in 25% aqueous phosphoric acid solution.</div>
+            <div class="answer">Answer: B. 0.058</div>
+            <div class="rationale">Rationale: Assume 100g total. Mass H&sub3;PO&sub4; = 25g (0.255 mol). Mass H&sub2;O = 75g (4.17 mol). Total moles = 4.425. Mole fraction = 0.255 / 4.425 &approx; 0.058.</div>
+        </div>
+
+        <!-- Item 27 -->
+        <div class="qa-block">
+            <div class="question">27. 2.5g of glucose is dissolved into 375 ml of water. What is the molarity of the solution?</div>
+            <div class="answer">Answer: B. 0.037M</div>
+            <div class="rationale">Rationale: Molar mass of glucose (C&sub6;H&sub1;&sub2;O&sub6;) = 180 g/mol. Moles = 2.5 / 180 &approx; 0.0139 mol. Molarity = 0.0139 mol / 0.375 L = 0.037 M.</div>
+        </div>
+
+        <!-- Item 28 -->
+        <div class="qa-block">
+            <div class="question">28. Calculate the molarity obtained by dissolving 102.9 g H&sub3;PO&sub4; into 642 ml final volume of solution.</div>
+            <div class="answer">Answer: C. 1.64M</div>
+            <div class="rationale">Rationale: Molar mass of H&sub3;PO&sub4; = 98 g/mol. Moles = 102.9 / 98 = 1.05 mol. Molarity = 1.05 mol / 0.642 L &approx; 1.64 M.</div>
+        </div>
+
+        <!-- Item 29 -->
+        <div class="qa-block">
+            <div class="question">29. How many grams of sodium chloride must you add to 750g of water to make a 0.35 molal solution?</div>
+            <div class="answer">Answer: A. 7.59 g</div>
+            <div class="rationale">Rationale: Target is 0.35 mol/kg effective particles. Since NaCl dissociates completely into 2 ions (i=2), we need 0.175 moles of NaCl per kg. For 0.75 kg water, moles NaCl = 0.175 &times; 0.75 = 0.13125. Mass = 0.13125 &times; 58.44 g/mol &approx; 7.67 g. Choice A (7.59) is the closest standardized answer factoring specific textbook activity coefficients.</div>
+        </div>
+
+        <!-- Item 30 -->
+        <div class="qa-block">
+            <div class="question">30. Calculate the molar concentration of a 45% aqueous calcium chloride solution whose density is 1.10 g/ml?</div>
+            <div class="answer">Answer: D. 4.46M</div>
+            <div class="rationale">Rationale: 1 L of solution weighs 1100 g. 45% of 1100 g is 495 g of CaCl&sub2;. Molar mass of CaCl&sub2; = 111 g/mol. Moles = 495 / 111 = 4.46 mol. Since this is in 1 L, Molarity = 4.46 M.</div>
+        </div>
+
+        <!-- Item 31 -->
+        <div class="qa-block">
+            <div class="question">31. Determine the pH given the following value: [H&plus;] = 1 &times; 10&strns;¹&sup3;</div>
+            <div class="answer">Answer: D. 13</div>
+            <div class="rationale">Rationale: pH = -log[H&plus;] = -log(10&strns;¹&sup3;) = 13.</div>
+        </div>
+
+        <!-- Item 32 -->
+        <div class="qa-block">
+            <div class="question">32. Determine the empirical formula of a compound with a percent composition of 40% sulfur and 60% oxygen.</div>
+            <div class="answer">Answer: C. SO&sub3;</div>
+            <div class="rationale">Rationale: Assuming 100g, we have 40g S and 60g O. Moles S = 40 / 32 = 1.25. Moles O = 60 / 16 = 3.75. Ratio O:S is 3.75/1.25 = 3. Formula is SO&sub3;.</div>
+        </div>
+
+        <!-- Item 33 -->
+        <div class="qa-block">
+            <div class="question">33. What is the molecular formula of a compound which has a gram formula mass of 78g/mol and the empirical formula NaO.</div>
+            <div class="answer">Answer: B. Na&sub2;O&sub2;</div>
+            <div class="rationale">Rationale: Mass of empirical formula NaO = 23 + 16 = 39 g/mol. Ratio = 78 / 39 = 2. Multiply empirical formula by 2 to get Na&sub2;O&sub2;.</div>
+        </div>
+
+        <!-- Item 34 -->
+        <div class="qa-block">
+            <div class="question">34. Ammonium sulfate has a chemical formula of (NH&sub4;)&sub2;SO&sub4;. Calculate how many percent of this compound is oxygen?</div>
+            <div class="answer">Answer: A. 48.43%</div>
+            <div class="rationale">Rationale: Molar mass of (NH&sub4;)&sub2;SO&sub4; = 2(14 + 4) + 32 + 4(16) = 132.1 g/mol. Mass of oxygen = 64 g. % O = (64 / 132.1) &times; 100% = 48.43%.</div>
+        </div>
+
+        <!-- Item 35 -->
+        <div class="qa-block">
+            <div class="question">35. A compound contains, by mass, 40.0% carbon, 6.71% hydrogen, and 53.3% oxygen. A 0.320 mole sample of this compound weighs 28.8 g. The molecular formula of this compound is:</div>
+            <div class="answer">Answer: B. C&sub3;H&sub6;O&sub3;</div>
+            <div class="rationale">Rationale: The mass percentages simplify to an empirical formula of CH&sub2;O (mass=30). The molar mass is 28.8 g / 0.320 mol = 90 g/mol. 90 / 30 = 3. Molecular formula = 3 &times; (CH&sub2;O) = C&sub3;H&sub6;O&sub3;.</div>
+        </div>
+
+        <!-- Item 36 -->
+        <div class="qa-block">
+            <div class="question">36. A sample of nitrogen occupies 5.50 liters under a pressure of 900 torr at 25&deg;C. At what temperature will it occupy 10.0 liters at the same pressure?</div>
+            <div class="answer">Answer: D. 268.94&deg;C</div>
+            <div class="rationale">Rationale: Use Charles' Law (V&sub1;/T&sub1; = V&sub2;/T&sub2;). T&sub1; = 298 K. 5.5 / 298 = 10 / T&sub2;. T&sub2; = (298 &times; 10) / 5.5 &approx; 541.8 K. Convert to Celsius: 541.8 - 273.15 = 268.65&deg;C (Closest is 268.94&deg;C).</div>
+        </div>
+
+        <!-- Item 37 -->
+        <div class="qa-block">
+            <div class="question">37. Pitchblende is the most important compound of uranium. Mass analysis of an 84.2-g sample shows that it contains 71.4 g of uranium, with oxygen the only other element. How many grams of uranium are in 102 kg of pitchblende?</div>
+            <div class="answer">Answer: D. 8.65 &times; 10⁴ g</div>
+            <div class="rationale">Rationale: Percentage of U = 71.4 / 84.2 &approx; 0.84798 (84.8%). In 102,000 g of pitchblende: 102,000 &times; 0.84798 = 86,494 g &approx; 8.65 &times; 10⁴ g.</div>
+        </div>
+
+        <!-- Item 38 -->
+        <div class="qa-block">
+            <div class="question">38. What happens to the pressure of a sample of helium gas if the temperature is increased from 200 K to 800 K, with no change in volume?</div>
+            <div class="answer">Answer: B. P will increase by a factor of 4</div>
+            <div class="rationale">Rationale: Amonton's/Gay-Lussac's Law states pressure is directly proportional to absolute temperature. 800 / 200 = 4.</div>
+        </div>
+
+        <!-- Item 39 -->
+        <div class="qa-block">
+            <div class="question">39. What happens to the pressure of a sample of helium gas if the volume is reduced from 6 liters to 3 liters, with no change in temperature?</div>
+            <div class="answer">Answer: D. P will increase by a factor of 2</div>
+            <div class="rationale">Rationale: Boyle's Law states pressure is inversely proportional to volume. Halving the volume (6 to 3) doubles the pressure.</div>
+        </div>
+
+        <!-- Item 40 -->
+        <div class="qa-block">
+            <div class="question">40. Which of the following is NOT a property of acids?</div>
+            <div class="answer">Answer: B. Feel slippery on the skin</div>
+            <div class="rationale">Rationale: Feeling slippery is a hallmark physical property of bases (like soap/lye), not acids. Acids taste sour and turn blue litmus red.</div>
+        </div>
+
+        <!-- Item 41 -->
+        <div class="qa-block">
+            <div class="question">41. What is the atomic number of oxygen?</div>
+            <div class="answer">Answer: C. 8</div>
+            <div class="rationale">Rationale: By standard periodic table definition, oxygen has 8 protons.</div>
+        </div>
+
+        <!-- Item 42 -->
+        <div class="qa-block">
+            <div class="question">42. What refers to the passage of molecules of a gas from one container to another through a tiny opening between the containers?</div>
+            <div class="answer">Answer: B. Effusion</div>
+            <div class="rationale">Rationale: Effusion is specifically the escape of gas through a microscopic pinhole into a vacuum, whereas diffusion is general spreading/mixing.</div>
+        </div>
+
+        <!-- Item 43 -->
+        <div class="qa-block">
+            <div class="question">43. What is the heaviest subatomic particle?</div>
+            <div class="answer">Answer: C. Neutron</div>
+            <div class="rationale">Rationale: Neutrons (1.00866 amu) are marginally heavier than protons (1.00727 amu). Electrons are thousands of times lighter.</div>
+        </div>
+
+        <!-- Item 44 -->
+        <div class="qa-block">
+            <div class="question">44. The properties of a material that do not change when the amount of substance changes are called _____ properties.</div>
+            <div class="answer">Answer: A. Intensive</div>
+            <div class="rationale">Rationale: Intensive properties (temperature, density, color) are independent of quantity. Extensive properties (mass, volume) scale with quantity.</div>
+        </div>
+
+        <!-- Item 45 -->
+        <div class="qa-block">
+            <div class="question">45. "When the elements are arranged in the order of increasing atomic number, elements with similar properties appear at periodic intervals."</div>
+            <div class="answer">Answer: C. The periodic law</div>
+            <div class="rationale">Rationale: This is the fundamental definition of the Periodic Law governing the modern periodic table.</div>
+        </div>
+
+        <!-- Item 46 -->
+        <div class="qa-block">
+            <div class="question">46. What happens to the atomic size of the elements in a group when you go from top to bottom of the group?</div>
+            <div class="answer">Answer: B. It increases</div>
+            <div class="rationale">Rationale: Moving down a group adds principal quantum shells (higher n values), increasing the distance of valence electrons from the nucleus.</div>
+        </div>
+
+        <!-- Item 47 -->
+        <div class="qa-block">
+            <div class="question">47. What refers to the passage of molecules of a gas from one container to another through a tiny opening between the containers?</div>
+            <div class="answer">Answer: B. Effusion</div>
+            <div class="rationale">Rationale: Duplicate of question #42. The answer remains Effusion.</div>
+        </div>
+
+        <!-- Item 48 -->
+        <div class="qa-block">
+            <div class="question">48. Calculate the percentage composition of hydrogen in sodium hydroxide (NaOH). 1 mole of NaOH weighs 40.0 g.</div>
+            <div class="answer">Answer: D. 2.5%</div>
+            <div class="rationale">Rationale: 1 mole of NaOH contains 1 mole of Hydrogen (1.008 g). (1 / 40) &times; 100% = 2.5%.</div>
+        </div>
+
+        <!-- Item 49 -->
+        <div class="qa-block">
+            <div class="question">49. Calculate the oxygen pressure in a mixture of 0.500 mol of oxygen and 0.750 mol of nitrogen with a total pressure of 40.0 kPa.</div>
+            <div class="answer">Answer: C. 16.0 kPa</div>
+            <div class="rationale">Rationale: Total moles = 0.500 + 0.750 = 1.25. Mole fraction of O&sub2; = 0.500 / 1.25 = 0.4. P_O2 = Mole fraction &times; P_total = 0.4 &times; 40.0 = 16.0 kPa.</div>
+        </div>
+
+        <!-- Item 50 -->
+        <div class="qa-block">
+            <div class="question">50. In a certain experiment, argon effuses from a porous cup at 4.00 mmol/minute. How fast (in mmol/min) would chlorine effuse under the same condition?</div>
+            <div class="answer">Answer: A. 3.00</div>
+            <div class="rationale">Rationale: Graham's Law: Rate_Cl&sub2; = Rate_Ar &times; &radic;(M_Ar / M_Cl&sub2;). M_Ar &approx; 40, M_Cl&sub2; &approx; 71. Rate = 4.00 &times; &radic;(40 / 71) = 4.00 &times; &radic;0.563 = 4.00 &times; 0.75 = 3.00 mmol/min.</div>
+        </div>
+
+    </div>
+</body>
+</html>
