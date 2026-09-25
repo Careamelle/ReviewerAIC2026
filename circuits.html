@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DC Circuits Reviewer</title>
+    <style>
+        :root {
+            var(--bg-color): #050505;
+            --card-bg: #121016;
+            --primary: #8a2be2;
+            --text-main: #f8f9fa;
+            --text-muted: #a1a1aa;
+            --border: #2d243e;
+            --success: #34d399; 
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #050505; /* Fallback */
+            background-color: var(--bg-color);
+            color: #f8f9fa;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .top-bar {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            background-color: #121016;
+            border-bottom: 1px solid #2d243e;
+        }
+
+        .brand-logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .profile-widget {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-align: right;
+            max-width: 420px;
+        }
+
+        .profile-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-text .name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #f8f9fa;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-text .bio {
+            font-size: 0.7rem;
+            color: #a1a1aa;
+            line-height: 1.4;
+            margin-top: 4px;
+        }
+
+        .profile-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #8a2be2;
+            flex-shrink: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto 4rem auto;
+            padding: 2.5rem;
+            background-color: #121016;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            border: 1px solid #2d243e;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: #8a2be2;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+            padding: 0.5rem 1rem;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            background-color: rgba(138, 43, 226, 0.05);
+        }
+
+        .back-btn:hover {
+            color: #d8b4fe;
+            border-color: #2d243e;
+            background-color: rgba(138, 43, 226, 0.1);
+        }
+
+        h2 {
+            border-bottom: 2px solid #2d243e;
+            padding-bottom: 1.2rem;
+            margin-top: 0;
+            color: #d8b4fe;
+            font-size: 1.8rem;
+        }
+
+        .qa-block {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #2d243e;
+        }
+        
+        .qa-block:last-child {
+            border-bottom: none;
+        }
+
+        .question { 
+            font-size: 1.1rem; 
+            color: #fff; 
+            font-weight: 500;
+        }
+        
+        .answer { 
+            font-weight: bold; 
+            color: #34d399; 
+            margin: 0.75rem 0; 
+            background: rgba(52, 211, 153, 0.1);
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+        }
+
+        .rationale { 
+            color: #a1a1aa; 
+            font-size: 0.95rem; 
+            background: rgba(255, 255, 255, 0.02);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid #2d243e;
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: flex-start;
+                padding: 1.5rem 1rem;
+            }
+            .profile-widget {
+                text-align: left;
+                flex-direction: row-reverse;
+                align-self: flex-end;
+            }
+            .container {
+                margin: 1.5rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="logo-container">
+            <img src="JIECEPLOGO.png" alt="JIECEP Logo" class="brand-logo">
+        </div>
+
+        <div class="profile-widget">
+            <div class="profile-text">
+                <span class="name">Carmel Angelo N. Hervera</span>
+                <span class="bio">Electronics Engineering Student, Sorsogon State University - College of Engineering and Architecture (Baribag Extension) A.Y. 2026-2027</span>
+            </div>
+            <img src="my-new-model.jpg" alt="Profile" class="profile-img">
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <a href="index.html" class="back-btn">← Back to Main Menu</a>
+        
+        <h2>DC Circuits (Elec 03-01 to 03-06)</h2>
+
+        <div class="qa-block">
+            <div class="question">1. If a resistance to which a constant voltage is applied is halved, what power dissipation will result?</div>
+            <div class="answer">Answer: A. Doubled</div>
+            <div class="rationale">Rationale: Power is calculated as P = V&sup2; / R. If the resistance R is halved (R/2), the formula becomes V&sup2; / (R/2) = 2(V&sup2; / R), which means power is doubled.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">2. If the reference point is changed to the earth point then any voltage taken w.r.t. the earth is known as</div>
+            <div class="answer">Answer: A. Absolute potential</div>
+            <div class="rationale">Rationale: Voltages measured relative to a true earth ground are absolute potentials, as earth represents an infinite charge sink with a theoretical potential of zero.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">3. What is the significance of connecting loads in parallel?</div>
+            <div class="answer">Answer: D. It allows independent operations of loads</div>
+            <div class="rationale">Rationale: Parallel connections ensure that the same constant voltage is applied across each branch, so turning one load on or off does not interrupt the circuit path for the others.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">4. Which of the following safety rules should be observed while working on live electric circuit?</div>
+            <div class="answer">Answer: D. Both A and B</div>
+            <div class="rationale">Rationale: Staying insulated from ground prevents a path to earth, and using the one-hand rule prevents a fatal current loop from traveling across your chest (heart).</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">5. Two ac sources feed a common variable resistive load... Under the maximum power transfer condition, what is the power absorbed by the load resistance R_L?</div>
+            <div class="answer">Answer: C. 625 W</div>
+            <div class="rationale">Rationale: Resolving the two sources into a Thevenin equivalent circuit yields V_th = 100 V and R_th = 4 &Omega;. Maximum power occurs when R_L = R_th (4 &Omega;). Power = (100 / 8)&sup2; &times; 4 = 625 W.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">6. The hot resistance of an incandescent lamp is about ___ times its cold resistance.</div>
+            <div class="answer">Answer: A. 10</div>
+            <div class="rationale">Rationale: Tungsten filaments have a high positive temperature coefficient. When heated to operating temperature, the resistance typically increases by a factor of 10 to 15.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">7. If a resistor in a series circuit is shorted, the series current, I</div>
+            <div class="answer">Answer: C. increases</div>
+            <div class="rationale">Rationale: A short circuit creates a 0 &Omega; path bypassing the resistor. This reduces the total equivalent resistance of the series circuit. By Ohm's Law (I = V/R), a lower resistance results in a higher current.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">8. The equivalent wye element of 3 equal resistors each equal to R and connected in delta is</div>
+            <div class="answer">Answer: B. R/3</div>
+            <div class="rationale">Rationale: The standard Delta-to-Wye conversion formula for equal resistors is R_Y = R_Delta / 3.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">9. A coil of aluminum wire has a resistance of 50 &Omega; when its temperature is 0&deg;C. Determine its resistance at 100&deg;C if the temperature coefficient of resistance of aluminum at 0&deg;C is 0.0038/&deg;C.</div>
+            <div class="answer">Answer: A. 69 &Omega;</div>
+            <div class="rationale">Rationale: R_t = R_0(1 + &alpha;&Delta;T). R_100 = 50(1 + 0.0038 &times; 100) = 50(1 + 0.38) = 50(1.38) = 69 &Omega;.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">10. A certain factory takes 250 A at 220 V. It is supplied through a pair of feeders 73.2 meters long and 1.29 cm&sup2; in cross section. What voltage must be maintained at the supply end of the feeders?</div>
+            <div class="answer">Answer: B. 222.5 V</div>
+            <div class="rationale">Rationale: Calculate total resistance of the lines using length and cross-section, which yields a voltage drop (I&times;R) of approximately 2.5 V. Add this drop to the 220 V required at the load to get 222.5 V supply.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">11. A wire with a smaller cross-sectional area will produce:</div>
+            <div class="answer">Answer: D. more heat</div>
+            <div class="rationale">Rationale: A smaller cross-section increases electrical resistance. Higher resistance dissipates more power as heat (P = I&sup2;R).</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">12. Halving the cross-sectional area of a conductor will:</div>
+            <div class="answer">Answer: D. Double the resistance</div>
+            <div class="rationale">Rationale: Resistance is inversely proportional to cross-sectional area (R = &rho;L/A). If A becomes A/2, R becomes 2R.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">13. An aluminum wire has a resistance of 50 &Omega; at 20&deg;C. The wire is heated to a temperature of 100&deg;C. Determine the resistance of the wire at 100&deg;C, assuming that the temperature coefficient of resistance at 0&deg;C is 0.004/&deg;C.</div>
+            <div class="answer">Answer: A. 64.81 &Omega;</div>
+            <div class="rationale">Rationale: First, find base resistance at 0&deg;C: R_0 = 50 / (1 + 0.004 &times; 20) &approx; 46.29 &Omega;. Then calculate for 100&deg;C: R_100 = 46.29(1 + 0.004 &times; 100) = 46.29(1.4) = 64.81 &Omega;.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">14. In Norton's Theorem, the short circuit current is obtained by</div>
+            <div class="answer">Answer: B. shorting the load terminals</div>
+            <div class="rationale">Rationale: The Norton equivalent current (I_N) is defined as the current that flows through a direct short circuit placed across the specific load terminals being evaluated.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">15. Delta to wye or wye to delta transformation technique is applied to a ___ network.</div>
+            <div class="answer">Answer: C. three-terminal</div>
+            <div class="rationale">Rationale: Delta (a triangle) and Wye (a Y-shape) configurations inherently connect exactly three nodes or terminals in a circuit.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">16. If the diameter of a wire is doubled, its current carrying capacity becomes</div>
+            <div class="answer">Answer: D. four times</div>
+            <div class="rationale">Rationale: Cross-sectional area is proportional to the square of the diameter (A = &pi;d&sup2;/4). Doubling the diameter quadruples the area, dropping resistance to 1/4 and allowing 4 times the current capacity.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">17. If a resistance element is part of two loops, how many voltage drops must be calculated for that component?</div>
+            <div class="answer">Answer: A. Two</div>
+            <div class="rationale">Rationale: In mesh analysis, a shared resistor experiences a voltage drop from the first loop's current and an opposing or additive drop from the second loop's current.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">18. Find the equivalent resistance of the figure shown below (Two 20&Omega; parallel, in series with 10&Omega;, all parallel to 20&Omega;).</div>
+            <div class="answer">Answer: A. 10 ohms</div>
+            <div class="rationale">Rationale: The two 20 &Omega; resistors in parallel equal 10 &Omega;. This is in series with the 10 &Omega; resistor, totaling 20 &Omega; for that branch. That 20 &Omega; branch is in parallel with the main 20 &Omega; resistor, resulting in a total equivalent resistance of 10 &Omega;.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">19. Suppose you double the voltage in a simple dc circuit and cut the resistance in half. The current will become:</div>
+            <div class="answer">Answer: A. Four times as great</div>
+            <div class="rationale">Rationale: Initial I = V/R. New I = (2V) / (0.5R) = 4(V/R) = 4I.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">20. In a series circuit, the current, I, is</div>
+            <div class="answer">Answer: B. the same everywhere</div>
+            <div class="rationale">Rationale: By Kirchhoff's Current Law, charge cannot accumulate in a single path, so current is uniform throughout a series circuit.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">21. When a material becomes a superconductor, its resistivity becomes</div>
+            <div class="answer">Answer: B. zero</div>
+            <div class="rationale">Rationale: The defining physical characteristic of a superconductor below its critical temperature is the complete elimination of electrical resistance.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">22. "The sum of the emf's and potential differences around a closed loop equals zero" is a consequence of:</div>
+            <div class="answer">Answer: C. Conservation of energy</div>
+            <div class="rationale">Rationale: Kirchhoff's Voltage Law dictates that total energy gained (sources) and lost (drops) by a charge in a closed loop must net to zero.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">23. Two (2) 115-V incandescent lamps A and B are connected in series across a 230-V source. If lamp A is rated 75 watts and lamp B is rated 50 watts, determine the current drawn by the series connection.</div>
+            <div class="answer">Answer: A. 0.52 A</div>
+            <div class="rationale">Rationale: Find resistances using R = V&sup2;/P. R_A = 115&sup2;/75 = 176.3 &Omega;. R_B = 115&sup2;/50 = 264.5 &Omega;. Total R = 440.8 &Omega;. I = 230 V / 440.8 &Omega; &approx; 0.52 A.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">24. A network contains linear resistors and ideal voltage sources. If values of all the resistors are doubled, then the voltage across each resistor is</div>
+            <div class="answer">Answer: D. no change</div>
+            <div class="rationale">Rationale: Voltage division depends entirely on the ratio of resistances to one another, not their absolute values. If all scale uniformly, the ratios and voltage drops remain identical.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">25. Which of the following is neither a basic physical law nor derivable from one?</div>
+            <div class="answer">Answer: A. Ohm's law</div>
+            <div class="rationale">Rationale: Ohm's law is an empirical observation describing how certain materials behave, whereas Coulomb's and Kirchhoff's laws are derived from fundamental physical constants (conservation of charge/energy).</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">26. Which of the following is the poorest conductor of electricity?</div>
+            <div class="answer">Answer: B. Nichrome</div>
+            <div class="rationale">Rationale: Aluminum and Copper are excellent conductors. Nichrome is an alloy explicitly designed for high electrical resistance to generate heat.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">27. If a resistor in a series circuit becomes open, how much is the voltage across each of the remaining resistors that are still good?</div>
+            <div class="answer">Answer: C. 0 V</div>
+            <div class="rationale">Rationale: An open circuit drops total current to zero. With no current flowing, Ohm's law (V=IR) dictates a 0V drop across the remaining intact resistors. The entire source voltage is dropped across the open break.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">28. A series circuit in which desired portions of the source voltage may be tapped off for use in equipment.</div>
+            <div class="answer">Answer: D. Voltage divider</div>
+            <div class="rationale">Rationale: A voltage divider uses series resistors to proportionately split the total voltage into smaller, tapped segments.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">29. If a complex circuit is reduced to an equivalent circuit consisting of a single voltage source in series with a single resistor, this is an example of:</div>
+            <div class="answer">Answer: B. Thevenin's theorem</div>
+            <div class="rationale">Rationale: This is the explicit definition of a Thevenin equivalent circuit. (Norton is a current source in parallel).</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">30. If one branch of a parallel circuit is short-circuited.</div>
+            <div class="answer">Answer: D. Both A and C</div>
+            <div class="rationale">Rationale: The current will bypass all other branches (effectively short-circuiting them as well) and travel through the zero-resistance path, pulling massive current that will blow the main line fuse.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">31. Twelve 1 &Omega; resistance are used as edges to form a cube. What is the resistance between two diagonally opposite corners of the cube?</div>
+            <div class="answer">Answer: A. 5/6 &Omega;</div>
+            <div class="rationale">Rationale: Current entering one corner splits uniformly into 3 branches, then splits into 6 edges, then converges back into 3 branches. R_eq = R/3 + R/6 + R/3 = 5R/6. For 1 &Omega;, it's 5/6 &Omega;.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">32. The polarity of a resistor's voltage drop is determined by</div>
+            <div class="answer">Answer: A. the direction of current through the resistor</div>
+            <div class="rationale">Rationale: By convention, current enters a resistor at the positive (+) polarity terminal and exits at the negative (-) polarity terminal.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">33. The electric energy required to raise the temperature of a given amount of water is 1000 kWh. If heat losses are 25%, the total heating energy required is</div>
+            <div class="answer">Answer: B. 1333</div>
+            <div class="rationale">Rationale: The 1000 kWh is the useful energy, which is only 75% of the total energy due to 25% losses. Total Energy = 1000 / 0.75 &approx; 1333 kWh.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">34. The resistance of a 5 m length of wire is 600 &Omega;. Determine the resistance of an 8 m length of the same wire.</div>
+            <div class="answer">Answer: A. 960 &Omega;</div>
+            <div class="rationale">Rationale: Resistance scales linearly with length. (600 &Omega; / 5 m) &times; 8 m = 120 &Omega;/m &times; 8 m = 960 &Omega;.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">35. What is expected when two 20 &Omega;, 1 watt resistor in parallel are used instead of one 10 &Omega;, 1 watt?</div>
+            <div class="answer">Answer: C. Provides more power</div>
+            <div class="rationale">Rationale: Two 20 &Omega; resistors in parallel provide an equivalent resistance of 10 &Omega;. However, their power ratings are additive, meaning the combination can safely dissipate 2 Watts instead of 1 Watt.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">36. Twelve identical wires of resistance 6 ohms each are arranged to form the edge of a cube. A current of 40 mA is led into the cube at one corner and out at the other diagonally opposite corner. Calculate the potential difference developed.</div>
+            <div class="answer">Answer: A. 0.20 V</div>
+            <div class="rationale">Rationale: Equivalent resistance across diagonal is 5/6 of the edge resistance. R_eq = (5/6) &times; 6 = 5 &Omega;. Voltage V = I &times; R = 0.040 A &times; 5 &Omega; = 0.20 V.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">37. The superposition theorem is used when the circuit contains</div>
+            <div class="answer">Answer: C. number of voltage sources</div>
+            <div class="rationale">Rationale: Superposition is a tool explicitly designed for analyzing linear networks containing two or more independent sources by solving for them one at a time.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">38. In a normally operating parallel circuit, the individual branch currents are</div>
+            <div class="answer">Answer: A. independent of each other</div>
+            <div class="rationale">Rationale: Because each branch is connected directly across the same voltage source, altering resistance in one branch has no effect on the current flowing through parallel branches.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">39. What is a closed path made of several branches of the network called?</div>
+            <div class="answer">Answer: D. Loop</div>
+            <div class="rationale">Rationale: Any unbroken path that traverses circuit nodes and returns to its starting point without crossing a node twice is defined as a loop.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">40. What is expected when two 20 &Omega;, 1 watt resistor in parallel are used instead of one 10k&Omega; (typo: meant 10&Omega;), 1 watt?</div>
+            <div class="answer">Answer: C. Provides more power</div>
+            <div class="rationale">Rationale: Duplicate question of #35. Two 1-watt resistors distribute the heat, yielding a 2-watt total capacity.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">41. If one branch of a parallel circuit becomes open,</div>
+            <div class="answer">Answer: C. the remaining branch currents do not change in value</div>
+            <div class="rationale">Rationale: Removing a parallel branch only affects the total source current. The applied voltage on the remaining branches stays constant, so their currents stay constant.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">42. In a parallel circuit, the individual branch currents are</div>
+            <div class="answer">Answer: C. inversely proportional to the branch resistance values</div>
+            <div class="rationale">Rationale: By Ohm&rsquo;s Law (I = V/R), since voltage is constant across parallel branches, current must drop as resistance increases.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">43. In any network made up of linear resistances and containing more than one source... the resultant current flowing in any branch is the algebraic sum... if each source was considered separately. What is this theorem?</div>
+            <div class="answer">Answer: C. Superposition theorem</div>
+            <div class="rationale">Rationale: This is the textbook definition of the Superposition Theorem.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">44. Two resistors of 4 ohms and 6 ohms are connected in parallel. If the total current is 30 amperes, find the current through each.</div>
+            <div class="answer">Answer: B. 18 A and 12 A</div>
+            <div class="rationale">Rationale: Use the current divider rule. I_4 = Total Current &times; [Opposite R / Sum of R] = 30 &times; (6 / 10) = 18 A. I_6 = 30 &times; (4 / 10) = 12 A.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">45. If an emf in circuit A produces a current in circuit B, then the same emf in circuit B produces the same current in circuit A. This theorem is known as</div>
+            <div class="answer">Answer: C. Reciprocity theorem</div>
+            <div class="rationale">Rationale: The Reciprocity theorem states that in a linear, passive network, the positions of an ideal voltage source and an ideal ammeter can be swapped without changing the ammeter reading.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">46. A 100-&Omega; resistor, R1, and a 300-&Omega; resistor, R2, are in parallel across a dc voltage source. Which resistor dissipates more power?</div>
+            <div class="answer">Answer: C. The 100-&Omega; resistor</div>
+            <div class="rationale">Rationale: In parallel, voltage is identical. Power P = V&sup2;/R. Since R is in the denominator, the smaller resistance draws more current and thus dissipates more power.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">47. The power transferred from a supply source to a load is at its maximum when the resistance of the load is _____ the internal resistance of the source.</div>
+            <div class="answer">Answer: C. equal to</div>
+            <div class="rationale">Rationale: Direct application of Jacobi's Maximum Power Transfer Theorem.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">48. What if you have a 12-strand conductor and each strand has a radius (one-half the diameter) of 2/10 inch, what is the square mil area of the conductor?</div>
+            <div class="answer">Answer: A. 1507965 sq. mil</div>
+            <div class="rationale">Rationale: Convert radius to mils: 2/10 inch = 0.2 inch = 200 mils. Area of one strand = &pi;r&sup2; = &pi;(200)&sup2; &approx; 125,663.7 sq. mil. Total area = 12 &times; 125,663.7 &approx; 1,507,964 sq. mil.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">49. A 5-&Omega; and 10-&Omega; resistor are connected in series across a dc voltage source. Which resistor will dissipate more power?</div>
+            <div class="answer">Answer: B. the 10-&Omega; resistor</div>
+            <div class="rationale">Rationale: In series, current is identical across components. Power P = I&sup2;R. Because the current is squared and constant, the larger resistance dissipates the most power.</div>
+        </div>
+
+        <div class="qa-block">
+            <div class="question">50. The first step in Thevenin's theorem is to:</div>
+            <div class="answer">Answer: B. open the load under test</div>
+            <div class="rationale">Rationale: To analyze a network's effect on a specific load, the load must first be temporarily removed (creating an open circuit) to calculate the open-circuit voltage (V_th).</div>
+        </div>
+
+    </div>
+</body>
+</html>
